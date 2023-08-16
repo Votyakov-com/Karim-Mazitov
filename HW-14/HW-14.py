@@ -23,13 +23,28 @@ k = int(input())
 sum_end = s * ((1 + r / 100) ** k)
 print(f"{sum_end:,.2f}")
 
+
 # 6
+def IP(a, b, c, d):
+    bin8_temp = "Восьмибитном двоичном: {:08b}.{:08b}.{:08b}.{:08b}"
+    bin_temp = "Двоичном: {:b}.{:b}.{:b}.{:b}"
+    oct_temp = "Восьмиричном: {:o}.{:o}.{:o}.{:o}"
+    dec_temp = "Десятичном: {}.{}.{}.{}"
+    hex_temp = "Шестнадцатиричном: {:x}.{:x}.{:x}.{:x}"
+    template = [bin8_temp, bin_temp, oct_temp, dec_temp, hex_temp]
+    result = []
+    for temp in template:
+        result.append(temp.format(a, b, c, d))
+    return "\n".join(result)
+
+
 a, b, c, d = map(int, input().split())
-bin8_temp = "Восьмибитном двоичном: {:08b}.{:08b}.{:08b}.{:08b}"
-bin_temp = "Двоичном: {:b}.{:b}.{:b}.{:b}"
-oct_temp = "Восьмиричном: {:o}.{:o}.{:o}.{:o}"
-dec_temp = "Десятичном: {}.{}.{}.{}"
-hex_temp = "Шестнадцатиричном: {:x}.{:x}.{:x}.{:x}"
-template = [bin8_temp, bin_temp, oct_temp, dec_temp, hex_temp]
-for temp in template:
-    print(temp.format(a, b, c, d))
+print(IP(a, b, c, d))
+# bin8_temp = "Восьмибитном двоичном: {:08b}.{:08b}.{:08b}.{:08b}"
+# bin_temp = "Двоичном: {:b}.{:b}.{:b}.{:b}"
+# oct_temp = "Восьмиричном: {:o}.{:o}.{:o}.{:o}"
+# dec_temp = "Десятичном: {}.{}.{}.{}"
+# hex_temp = "Шестнадцатиричном: {:x}.{:x}.{:x}.{:x}"
+# template = [bin8_temp, bin_temp, oct_temp, dec_temp, hex_temp]
+# for temp in template:
+#     print(temp.format(a, b, c, d))
